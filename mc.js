@@ -213,7 +213,8 @@ e.unpackMsgStr = function(s, start) {
              null);
     r.data = (r.datalen > 0 ?
               s.slice(start + e.SIZEOF_HEADER + r.extlen + r.keylen,
-                      start + e.SIZEOF_HEADER + r.extlen + r.keylen + r.datalen) :
+                      start + e.SIZEOF_HEADER + r.extlen + r.keylen +
+                      r.datalen) :
               null);
   }
 

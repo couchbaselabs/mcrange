@@ -1,10 +1,10 @@
 // Example usage:
 //
-//   node tap.js -s 127.0.0.1:11210
-//   node tap.js -s 127.0.0.1:11210 -e "dump(item)"
-//   node tap.js -s 127.0.0.1:11210 -e "dumpAll(item)"
-//   node tap.js -s 127.0.0.1:11210 -e 'if (item.key == "hi") { sys.puts("world " + item.data); }'
-//   node tap.js -s 127.0.0.1:11210 -e 'if (item.key.indexOf("cust:") == 0) { emit(item.key, "1"); }'
+//   node tap.js -s 127.0.0.1
+//   node tap.js -s 127.0.0.1 -e "dump(item)"
+//   node tap.js -s 127.0.0.1 -e "dumpAll(item)"
+//   node tap.js -s 127.0.0.1 -e 'if (item.key == "hi") { sys.puts("world " + item.data); }'
+//   node tap.js -s 127.0.0.1 -e 'if (item.key.indexOf("cust:") == 0) { emit(item.key, "1"); }'
 //
 var sys = require('sys'),
     net = require('net'),
@@ -84,7 +84,7 @@ for (var i = 2; i < process.argv.length; i++) {
 }
 
 function usage() {
-  sys.puts("tap.js - run javascript code against the items in a membase node\n");
+  sys.puts("tap.js - run javascript code against items in membase\n");
   sys.puts("  usage: " + process.argv[0] + " tap.js" +
            " [-b 'before javascript code']" +
            " [-e 'during javascript code']" +
