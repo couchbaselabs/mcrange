@@ -13,8 +13,9 @@
  * limitations under the License.
  */
 exports.htons = function(b, i, v) {
-  b[i]   = (0xff & (v >> 8));
+  b[i+0] = (0xff & (v >> 8));
   b[i+1] = (0xff & (v));
+  return b;
 }
 
 exports.ntohs = function(b, i) {
@@ -32,6 +33,7 @@ exports.htonl = function(b, i, v) {
   b[i+1] = (0xff & (v >> 16));
   b[i+2] = (0xff & (v >> 8));
   b[i+3] = (0xff & (v));
+  return b;
 }
 
 exports.ntohl = function(b, i) {
